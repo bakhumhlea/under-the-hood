@@ -1,0 +1,70 @@
+$page_con_pd: 5px 5% 0 5%;
+$hover_transition: 0.5s 0.1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+$card_sha: 0 4px 8px 0px rgba(0, 42, 61, 0.05),
+0 10px 14px 2px rgba(0, 42, 61, 0.1);
+$card_sha_hover: 0 10px 4px 0px rgba(0, 42, 61, 0.04),
+0 16px 10px 2px rgba(0, 42, 61, 0.08);
+$main_font: 'Poppins', sans-serif;
+
+$color_lt_blue: #5bcbff;
+$color_lt_green: #00fd54;
+
+.visual-page {
+  min-height: 100vh;
+  padding: $page_con_pd;
+  color: $color_lt_blue;
+  .page-title {
+    color: $color_lt_green;
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    border-bottom: 1px solid $color_lt_green;
+  }
+  .visual-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    max-width: 1200px;
+    width: 100%;
+    .visual-card {
+      cursor: pointer;
+      padding: 10px;
+      margin: 0px;
+      min-width: 250px;
+      min-height: 250px;
+      border-radius: 10px;
+      border: 1px solid rgba(73, 73, 73, 0.2);
+      box-shadow: $card_sha;
+      transition: $hover_transition;
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: $card_sha_hover;
+      }
+    }
+    .card-title {
+      font-weight: 400;
+      font-size: 1em;
+    }
+    .card-owner {
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
+    .tool-tag {
+      .tag {
+        display: inline-block;
+        font-size: 0.7em;
+        padding: 0 5px;
+        border: 1px solid rgb(67, 126, 204);
+        border-radius: 3px;
+        text-align: center;
+        min-width: 40px;
+        color: rgb(67, 126, 204);
+        background: rgb(255, 255, 255);
+        margin-right: 4px;
+      }
+    }
+  }
+}

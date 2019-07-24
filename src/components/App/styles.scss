@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Cabin';
+  src: url('../../fonts/cabin-v13-latin/cabin-v13-latin-regular.woff2');
+}
+
+$theme-light-bg: white;
+$theme-dark-bg: black;
+$main-font: 'Poppins', sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #4392ff;
+}
+.main-container {
+  background-color: rgb(2, 12, 20);
+}

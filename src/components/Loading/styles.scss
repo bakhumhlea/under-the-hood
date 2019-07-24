@@ -1,0 +1,53 @@
+$bg-dark: #020c14;
+$color-br-orange: rgb(255, 173, 21);
+$green-shade-lt: rgb(19, 221, 110);
+$red-warning: rgb(222, 27, 27);
+$axis-color: rgb(231, 28, 140);
+$blue-barstick: rgb(91, 203, 255);
+$orange-linechart: rgb(231, 127, 29);
+$font-poppins: 'Poppins', sans-serif;
+$basic-trans: 0.3s 0s all cubic-bezier(0.08, 0.8, 0.2, 1);
+
+.wrapper {
+  font-family: $font-poppins;
+  font-size: 1rem;
+  .error-title {
+    font-size: 1.2em
+  }
+  .reload-btn {
+    text-align: center;
+    color: white;
+    border: 1px solid $blue-barstick;
+    width: 100px;
+    height: 30px;
+    background-color: $blue-barstick;
+  }
+}
+.loading-wrapper {
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+  min-height: 500px;
+  // background: red;
+  margin: calc(100vh - 550px) auto 0 auto;
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    stroke: $green-shade-lt;
+    fill: transparent;
+    transform: translate(-50%,-100%);
+    .loading-cir {
+      opacity: 1;
+      transition: 0.1s 0s all linear;
+    }
+  }
+}
+@keyframes ripple {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

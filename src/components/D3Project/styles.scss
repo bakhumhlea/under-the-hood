@@ -1,0 +1,378 @@
+$bg-dark: #020c14;
+$color-br-orange: rgb(255, 173, 21);
+$green-shade-lt: rgb(19, 221, 110);
+$red-warning: rgb(222, 27, 27);
+$axis-color: rgb(231, 28, 140);
+$blue-barstick: rgb(91, 203, 255);
+$orange-linechart: rgb(231, 127, 29);
+$font-poppins: 'Poppins', sans-serif;
+$basic-trans: 0.3s 0s all cubic-bezier(0.08, 0.8, 0.2, 1);
+
+
+.d3project-wrapper {
+  .viz-loading {
+    transform: translateY(-100px);
+  }
+  .proj-container {
+    padding-top: calc(100vh - 550px);
+    .super-title {
+      float: left;
+      font-size: 5em;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1em;
+      margin-bottom: 30px;
+      color: $green-shade-lt;
+      padding: 0 15px;
+      width: 60%;
+      .arrow {
+        stroke: $green-shade-lt;
+        fill: none;
+      }
+    }
+    .viz-wrapper {
+      margin: 0 auto 10px auto;
+      min-height: 500px;
+      .chart-controller {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 50%;
+        min-width: 320px;
+        color: $blue-barstick;
+        height: 230px;
+        margin-right: 35px;
+        .meta-data-group {
+          text-align: right;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+          width: 320px;
+          // height: 99px;
+          margin-bottom: 10px;
+          .symbol-data {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7em;
+            margin-bottom: 10px;
+
+            .price-details {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-content: space-between;
+              height: 99px;
+              width: 210px;
+              // border: 1px solid $green-shade-lt;
+              margin-right: 10px;
+              .up {
+                width: 49%;
+                height: 45px;
+                font-size: 2.6em;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                color: $green-shade-lt;
+                padding: 2px 6px;
+                height: 45px;
+              }
+              .down {
+                width: 49%;
+                height: 45px;
+                font-size: 2.6em;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                color: $red-warning;
+                padding: 2px 6px;
+                height: 45px;
+              }
+              .percentup {
+                width: 49%;
+                height: 45px;
+                font-size: 2.2em;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2px 6px;
+                color: $bg-dark;
+                background-color: $green-shade-lt;
+                border: 1px solid $green-shade-lt;
+                height: 45px;
+              }
+              .percentdown {
+                width: 49%;
+                height: 45px;
+                font-size: 2.2em;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2px 6px;
+                color: $bg-dark;
+                background-color: $red-warning;
+                border: 1px solid $red-warning;
+                height: 45px;
+              }
+              .price {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                color: $green-shade-lt;
+                padding: 2px 6px;
+                border: 1px solid $green-shade-lt;
+                height: 45px;
+                width: 23.5%;
+              }
+            }
+            .symbol {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 2.3em;
+              font-weight: 600;
+              text-transform: uppercase;
+              width: 99px;
+              height: 99px;
+              color: $bg-dark;
+              background-color: $blue-barstick;
+              border: 4px solid $blue-barstick;
+            }
+          }
+          .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 0.8em;
+            font-weight: 200;
+            padding: 5px 10px;
+            width: 320px;
+            // height: 70px;
+            border: 1px solid $blue-barstick;
+            .sub-text {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+        }
+        .input-group {
+          position: relative;
+          display: flex;
+          align-items: center;
+          .clear-ticker {
+            cursor: pointer;
+            position: absolute;
+            stroke: $blue-barstick;
+            stroke-width: 1px;
+            transform: translateX(10px);
+            stroke: $color-br-orange;
+            transition: $basic-trans;
+            &:hover {
+              transform: translateX(10px) rotate(90deg);
+            }
+          }
+          .inputTron {
+            color: $blue-barstick;
+            font-family: $font-poppins;
+            font-size: 0.9em; 
+            background-color: transparent;
+            border: 1px solid $blue-barstick;
+            width: 200px;
+            height: 30px;
+            padding: 0 15px;
+            margin-right: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            outline: none;
+            &:focus {
+              color: $color-br-orange;
+              border-color: $color-br-orange;
+            }
+          }
+          .btnTron {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            font-family: $font-poppins;
+            font-size: 0.9em; 
+            color: $green-shade-lt;
+            background-color: transparent;
+            border: 2px solid $green-shade-lt;
+            height: 30px;
+            width: 110px;
+            padding: 0 15px;
+            z-index: 5;
+            outline: none;
+            &::after {
+              content: "";
+              display: inline-block;
+              width: 1%;
+              height: 1%;
+              position: absolute;
+              border-radius: 100px;
+              top: 50%;
+              left: 50%;
+              z-index: -1;
+              transform: translate(-50%,-50%);
+              transition: $basic-trans;
+            }
+            &:hover {
+              color: black;
+            }
+            &:hover::after {
+              color: black;
+              background-color: $green-shade-lt;
+              border: 2px solid $green-shade-lt;
+              border-radius: 0;
+              transform: translate(-50%,-50%);
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      .viz-barchart {
+        opacity: 0;
+        transform: translateY(50px);
+        display: block;
+        margin: 0 auto 0 auto;
+        animation: appear 1s 0.5s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+        .close-price-line {
+          stroke: #f3e562;
+        }
+        .vert-axis {
+          color: $axis-color;
+          stroke: $axis-color;
+          font-weight: 100;
+          font-family: 'Open sans';
+        }
+        .bar-stick {
+          stroke: rgb(91, 203, 255);
+          fill: none;
+          transition: 0.2s 0s all cubic-bezier(0.215, 0.610, 0.355, 1);
+          &:hover {
+            stroke-width: 2px;
+            // stroke: $blue-barstick;
+            fill: $blue-barstick;
+            // transform: translateY(-20px);
+          }
+        }
+        .line-chart {
+          stroke: $orange-linechart;
+          stroke-width: 1px;
+          fill: none;
+        }
+        .overlay {
+          stroke: #d80e51;
+          fill: rgba(0, 0, 0, 0);
+          &:hover {
+            fill: rgba(0, 0, 0, 0);
+          }
+        }
+        .focus-point {
+          fill: none;
+          stroke: #13dd6e;
+        }
+        .crosshair-line {
+          stroke: #099247;
+        }
+        .mouse-canvas {
+          display: none;
+        }
+      }
+      .viz-volchart {
+        opacity: 0;
+        transform: translateY(50px);
+        display: block;
+        margin: 0 auto 0 auto;
+        animation: appear 1s 0.7s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+        .vert-axis {
+          color: $axis-color;
+          stroke: $axis-color;
+          font-weight: 100;
+          font-family: 'Open sans';
+        }
+        .vol-stick {
+          stroke: #1de782;
+          fill: none;
+          transition: 0.2s 0s all cubic-bezier(0.215, 0.610, 0.355, 1);
+          &:hover {
+            stroke-width: 2px;
+            // stroke: $blue-barstick;
+            fill: #1de782;
+            // transform: translateY(-20px);
+          }
+        }
+      }
+      .map-wraper {
+        position: relative;
+        margin: auto;
+        .viz-worldmap {
+          display: block;
+          margin: 0 auto;
+          border: 1px dashed rgb(68, 241, 52);
+          .countries {
+            z-index: 1;
+            cursor: crosshair;
+            fill: transparent;
+            stroke: rgb(104, 47, 24);
+            &:hover {
+              z-index: 100;
+              // fill: rgb(241, 106, 52);
+              stroke: $color-br-orange;
+              stroke-width: 2px;
+            }
+          }
+        }
+        .country-name {
+          color: $color-br-orange;
+          font-size: 0.7em;
+          font-weight: 400;
+          font-family: 'Poppins', sans-serif;
+          letter-spacing: 2px;
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          padding: 2px 10px;
+          // border-radius: 100px;
+          // border-bottom: 1px solid $color-br-orange;
+          transform: translateX(-50%);
+          transition: 0.3s 0s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
